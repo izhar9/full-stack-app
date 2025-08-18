@@ -11,15 +11,15 @@ dotenv.config({
 })
 // const app = express();
 
-const prot = process.env.PORT || 8000;
+const port = process.env.PORT || 8000;
 connecttDB()
 .then(() =>{
     app.on("error", (error) =>{
         console.error("Database connected but app is not listening: ",error)
         throw error
     });
-    app.listen(prot,() =>{
-        console.log(`server is running on port ${prot}`)
+    app.listen(port,() =>{
+        console.log(`server is running on port ${port}`)
     })
 })
 .catch((error) =>{

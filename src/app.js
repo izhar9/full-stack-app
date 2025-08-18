@@ -4,9 +4,10 @@ import cors from 'cors';
 
 const app = express();
 
+// use() sabhi middleware and configuration ke liye use karte hai.
 app.use(cors({
     origin: process.env.CROSS_ORIGIN,
-    credentials: true
+    credentials: true // cookies / auth headers frontend se bhejne ke liye
 }))
 
 app.use(express.json({limit: "16kb"}))  // it receive json data Atmost 16kb

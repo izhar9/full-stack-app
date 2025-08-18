@@ -1,3 +1,7 @@
+/* jab bhi koi endpoint par api banate hai tab try-catch likhte hai, har endpoint banate 
+samaye try-catch n likhna pade iske ye ye method banaye hai, ye method har endpoint ke 
+async function me call karte hai
+*/
 const asyncHandler = (requestHandler) => {
     return (req, res, next) => {
         Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err))
